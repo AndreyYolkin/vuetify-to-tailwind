@@ -46,4 +46,26 @@
   <div class="flex-wrap-reverse"></div>
   <div class="flex-xxl-wrap-reverse"></div>
   <div class="flex-xl-nowrap"></div>
+
+  <!-- Justify-content -->
+  <div class="justify-start"></div>
+  <div class="justify-space-between"></div>
+  <div class="justify-xl-space-around"></div>
+  <div class="justify-md-center"></div>
+
+  <!-- JAlign-items -->
+  <div class="align-start"></div>
+  <div class="align-stretch"></div>
+  <div class="align-xl-center"></div>
+  <div class="align-sm-end"></div>
+
+  <!-- Align-content -->
+  <div class="align-content-space-around"></div>
+  <div class="align-content-xxl-space-evenly"></div>
+  <div class="align-content-sm-center"></div>
+
+  <!-- Align-self -->
+  <div class="self-center"></div>
+  <div class="self-start"></div>
+  <div class="self-sm-center"></div>
 </template>
