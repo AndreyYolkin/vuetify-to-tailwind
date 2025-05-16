@@ -13,6 +13,7 @@ import { justifyContentMap } from './justify-content'
 import { marginMap } from './margin'
 import { orderMap } from './order'
 import { paddingMap } from './padding'
+import { positionMap } from './position'
 import { roundedMap } from './rounded'
 
 export const classMap: Record<string, string> = {
@@ -33,4 +34,5 @@ export const classMap: Record<string, string> = {
   ...marginMap,
   ...paddingMap,
   ...roundedMap,
+  ...positionMap,
 }
