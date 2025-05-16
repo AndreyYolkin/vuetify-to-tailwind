@@ -3,6 +3,7 @@ import { flexMap } from './flex'
 import { flexDirectionMap } from './flex-direction'
 import { flexGrowMap } from './flex-grow'
 import { flexShrinkMap } from './flex-shrink'
+import { flexWrapMap } from './flex-wrap'
 import { floatMap } from './float'
 
 export const classMap: Record<string, string> = {
@@ -13,4 +14,5 @@ export const classMap: Record<string, string> = {
   ...flexDirectionMap,
   ...flexGrowMap,
   ...flexShrinkMap,
+  ...flexWrapMap,
 }
