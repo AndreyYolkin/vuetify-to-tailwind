@@ -1,8 +1,9 @@
 {
-  "name": "my-codemod",
+  "name": "@vuetify/tailwind-migrator",
   "type": "module",
+  "version": "0.1.0",
   "bin": {
-    "my-codemod": "dist/cli.js"
+    "vtm": "dist/cli.js"
   },
   "scripts": {
     "generate": "tsdown --no-config src/generator.ts && node dist/generator",
