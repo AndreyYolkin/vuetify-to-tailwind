@@ -13,6 +13,7 @@ import { justifyContentMap } from './justify-content'
 import { marginMap } from './margin'
 import { orderMap } from './order'
 import { paddingMap } from './padding'
+import { roundedMap } from './rounded'
 
 export const classMap: Record<string, string> = {
   // overflow is the same
@@ -31,4 +32,5 @@ export const classMap: Record<string, string> = {
   ...gapMap,
   ...marginMap,
   ...paddingMap,
+  ...roundedMap,
 }
