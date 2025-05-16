@@ -98,8 +98,14 @@
   <div class="ps-lg-0"></div>
 
   <!-- Rounded -->
-   <div class="rounded-circle"></div>
-   <div class="rounded-0"></div>
-   <div class="rounded-pill"></div>
-   <div class="rounded-shaped"></div>
+  <div class="rounded-circle"></div>
+  <div class="rounded-0"></div>
+  <div class="rounded-pill"></div>
+  <div class="rounded-shaped"></div>
+
+  <!-- Position -->
+  <div class="position-absolute"></div>
+  <div class="position-static"></div>
+  <div class="position-fixed"></div>
+  <div class="position-sticky"></div>
 </template>
