@@ -1,6 +1,6 @@
 <template>
   <!-- Misc -->
-  <div class="d-flex 'class-a class-abc d-xxl-flex"></div>
+  <div class="d-flex 'd-flex class-abc d-xxl-flex"></div>
   <div :class="'d-flex class-c' + 'class-f new-class'"></div>
   <div :class="`d-flex abc-${'cde'} skibidi d-sm-inline`"></div>
   <div :class="['d-flex', 'd-md-none']"></div>
@@ -96,4 +96,10 @@
   <div class="pa-md-12"></div>
   <div class="pb-xl-12"></div>
   <div class="ps-lg-0"></div>
+
+  <!-- Rounded -->
+   <div class="rounded-circle"></div>
+   <div class="rounded-0"></div>
+   <div class="rounded-pill"></div>
+   <div class="rounded-shaped"></div>
 </template>
