@@ -68,4 +68,16 @@
   <div class="self-center"></div>
   <div class="self-start"></div>
   <div class="self-sm-center"></div>
+
+  <!-- Order-->
+  <div class="order-first"></div>
+  <div class="order-md-last"></div>
+  <div class="order-sm-11"></div>
+
+  <!-- Gap-->
+  <div class="ga-0"></div>
+  <div class="gc-1"></div>
+  <div class="gr-12"></div>
+  <div class="gr-md-12"></div>
+  <div class="gc-xl-2"></div>
 </template>
