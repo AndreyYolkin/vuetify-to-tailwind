@@ -5,9 +5,11 @@
     "my-codemod": "dist/cli.js"
   },
   "scripts": {
-    "build": "tsdown && chmod +x dist/cli.js",
+    "generate": "tsdown --no-config src/generator.ts && node dist/generator",
+    "build": "node --run generate && tsdown && chmod +x dist/cli.js",
     "lint": "eslint . --ext .ts",
-    "test": "vitest"
+    "test": "vitest",
+    "postinstall": "node --run generate"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

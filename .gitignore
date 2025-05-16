@@ -4,3 +4,5 @@ dist
 build
 
 uno.config.ts
+
+src/mappings.json

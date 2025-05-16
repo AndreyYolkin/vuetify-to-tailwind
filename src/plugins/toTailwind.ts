@@ -1,10 +1,10 @@
 import { builders, type CodemodPlugin } from 'vue-metamorph'
-import { classMap } from '../constants/mappings'
+import classes from '../mappings.json' with { type: 'json' }
 
 function replaceClassString (classString: string): string {
   return classString
     .split(/\s+/)
-    .map(cls => classMap[cls] || cls)
+    .map(cls => classes[cls as keyof typeof classes] || cls)
     .join(' ')
 }
 
