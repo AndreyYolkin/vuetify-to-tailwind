@@ -9,6 +9,7 @@ import { flexShrinkMap } from './flex-shrink'
 import { flexWrapMap } from './flex-wrap'
 import { floatMap } from './float'
 import { justifyContentMap } from './justify-content'
+import { orderMap } from './order'
 
 export const classMap: Record<string, string> = {
   // overflow is the same
@@ -23,4 +24,5 @@ export const classMap: Record<string, string> = {
   ...alignItemsMap,
   ...alignContentMap,
   ...alignSelfMap,
+  ...orderMap,
 }
