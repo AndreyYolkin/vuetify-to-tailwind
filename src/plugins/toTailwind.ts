@@ -10,7 +10,7 @@ function replaceClassString (classString: string): string {
 
 export const replaceClassNamesCodemod: CodemodPlugin = {
   type: 'codemod',
-  name: 'simple replace class names',
+  name: 'Migrate vuetify utility classes to tailwind',
 
   transform ({ scriptASTs, sfcAST, utils: { traverseScriptAST, traverseTemplateAST } }) {
     let transformCount = 0
