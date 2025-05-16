@@ -80,4 +80,20 @@
   <div class="gr-12"></div>
   <div class="gr-md-12"></div>
   <div class="gc-xl-2"></div>
+
+  <!-- Margin -->
+  <div class="ma-0"></div>
+  <div class="mx-1"></div>
+  <div class="me-n12"></div>
+  <div class="ma-md-12"></div>
+  <div class="mb-xl-n12"></div>
+  <div class="ms-lg-0"></div>
+
+  <!-- Margin -->
+  <div class="pa-0"></div>
+  <div class="px-1"></div>
+  <div class="pe-12"></div>
+  <div class="pa-md-12"></div>
+  <div class="pb-xl-12"></div>
+  <div class="ps-lg-0"></div>
 </template>
