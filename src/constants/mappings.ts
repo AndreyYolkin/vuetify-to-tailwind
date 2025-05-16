@@ -8,6 +8,7 @@ import { flexGrowMap } from './flex-grow'
 import { flexShrinkMap } from './flex-shrink'
 import { flexWrapMap } from './flex-wrap'
 import { floatMap } from './float'
+import { gapMap } from './gap'
 import { justifyContentMap } from './justify-content'
 import { orderMap } from './order'
 
@@ -25,4 +26,5 @@ export const classMap: Record<string, string> = {
   ...alignContentMap,
   ...alignSelfMap,
   ...orderMap,
+  ...gapMap,
 }
