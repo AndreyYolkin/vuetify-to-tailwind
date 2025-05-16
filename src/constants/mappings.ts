@@ -8,6 +8,7 @@ import { flexGrowMap } from './flex-grow'
 import { flexShrinkMap } from './flex-shrink'
 import { flexWrapMap } from './flex-wrap'
 import { floatMap } from './float'
+import { fontWeightsMap, monoMap } from './font'
 import { gapMap } from './gap'
 import { justifyContentMap } from './justify-content'
 import { marginMap } from './margin'
@@ -15,6 +16,8 @@ import { orderMap } from './order'
 import { paddingMap } from './padding'
 import { positionMap } from './position'
 import { roundedMap } from './rounded'
+import { textDecorationMap } from './textDecoration'
+import { textTransformMap } from './textTransform'
 
 export const classMap: Record<string, string> = {
   // overflow is the same
@@ -35,4 +38,8 @@ export const classMap: Record<string, string> = {
   ...paddingMap,
   ...roundedMap,
   ...positionMap,
+  ...monoMap,
+  ...fontWeightsMap,
+  ...textTransformMap,
+  ...textDecorationMap,
 }
