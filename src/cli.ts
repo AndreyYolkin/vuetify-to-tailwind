@@ -9,7 +9,7 @@ const cli = createVueMetamorphCli({
   ],
   additionalCliOptions: program =>
     program
-      .option('-a, --attributes <VALUE>', 'Attributes to transform', 'class,className'),
+      .option('-a, --attrs <VALUE>', 'Attributes to transform', 'class,className,activeClass,contentClass,selectedClass'),
 })
 
 process.on('SIGQUIT', cli.abort)

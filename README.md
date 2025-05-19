@@ -10,10 +10,23 @@ You need to [disable vuetify utilities](https://vuetifyjs.com/en/features/sass-v
 npx -y @vuetify/tailwind-migrator --files="src/**"
 ```
 
-By default tool will search for `class` and `className` attributes. You can specify custom attributes with `--attrs` option (comma-separated).
+By default tool will search for the following attributes:
+- `class`
+- `className` (for JSX)
+- `contentClass`
+- `activeClass`
+- `selectedClass`
+
+You can specify additional custom attributes with the `--attrs` option (comma-separated).
 
 ```bash
-npx -y @vuetify/tailwind-migrator --files="src/**" --attrs="class,className,contentClass"
+npx -y @vuetify/tailwind-migrator --files="src/**" --attrs="class,bodyClass"
+```
+
+If you want to migrate all attributes, you can use the wildcard option.
+
+```bash
+npx -y @vuetify/tailwind-migrator --files="src/**" --attrs="*"
 ```
 
 ## Example

@@ -23,12 +23,20 @@ export const replaceClassNamesCodemod: CodemodPlugin = {
     let transformCount = 0
 
     const attributes = new Set((opts.attributes as string).split(',').map(a => toKebabCase(a.trim())))
+    const wildcard = attributes.has('*')
+
+    function checkAttribute (attr: string) {
+      if (wildcard) {
+        return true
+      }
+      return attributes.has(toKebabCase(attr))
+    }
 
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitJSXAttribute (path) {
           const attr = path.node
-          if (attributes.has(attr.name.name as string)) {
+          if (checkAttribute(attr.name.name as string)) {
             const valueNode = attr.value
             if (valueNode?.type === 'Literal' && typeof valueNode.value === 'string') {
               const newValue = replaceClassString(valueNode.value)
@@ -48,7 +56,7 @@ export const replaceClassNamesCodemod: CodemodPlugin = {
 
         enterNode (node) {
           if ('type' in node) {
-            if (node.type === 'VAttribute' && attributes.has(node.key.name as string) && node.value && node.value.type === 'VLiteral') {
+            if (node.type === 'VAttribute' && checkAttribute(node.key.name as string) && node.value && node.value.type === 'VLiteral') {
               const original = node.value.value.replace(/^"|"$/g, '')
               const newValue = replaceClassString(original)
 
@@ -63,7 +71,7 @@ export const replaceClassNamesCodemod: CodemodPlugin = {
               && node.parent.directive
               && node.parent.key.argument
               && 'name' in node.parent.key.argument
-              && attributes.has(node.parent.key.argument.name)
+              && checkAttribute(node.parent.key.argument.name)
             ) {
               traverseTemplateAST(node, {
                 enterNode (expr) {
