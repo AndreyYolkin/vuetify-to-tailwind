@@ -1,4 +1,4 @@
-# Vuetify to Tailwind Codemod
+# Vuetify to Tailwind Migrator
 
 A CLI tool for automated migration from Vuetify utility classes to Tailwind CSS. Currently supports conversion of standard class attributes and :class directives.
 
