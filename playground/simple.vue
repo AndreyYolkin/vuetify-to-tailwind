@@ -5,6 +5,8 @@
   <div :class="`d-flex abc-${'cde'} skibidi d-sm-inline`"></div>
   <div :class="['d-flex', 'd-md-none']"></div>
   <div :class="{ 'd-flex': true }"></div>
+  <div :content-class="{ 'd-flex': true }"></div>
+  <div :non-content-class="`d-flex`"></div>
 
   <!-- Display -->
   <div class="d-flex d-xxl-inline"></div>
