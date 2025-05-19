@@ -7,6 +7,9 @@ const cli = createVueMetamorphCli({
   plugins: [
     replaceClassNamesCodemod,
   ],
+  additionalCliOptions: program =>
+    program
+      .option('-a, --attributes <VALUE>', 'Attributes to transform', 'class,className'),
 })
 
 process.on('SIGQUIT', cli.abort)

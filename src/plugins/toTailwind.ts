@@ -8,18 +8,27 @@ function replaceClassString (classString: string): string {
     .join(' ')
 }
 
+function toKebabCase (str: string): string {
+  return str
+    .replace(/([a-z])([A-Z])/g, '$1-$2')
+    .replace(/\s+/g, '-')
+    .toLowerCase()
+}
+
 export const replaceClassNamesCodemod: CodemodPlugin = {
   type: 'codemod',
   name: 'Migrate vuetify utility classes to tailwind',
 
-  transform ({ scriptASTs, sfcAST, utils: { traverseScriptAST, traverseTemplateAST } }) {
+  transform ({ opts, scriptASTs, sfcAST, utils: { traverseScriptAST, traverseTemplateAST } }) {
     let transformCount = 0
+
+    const attributes = new Set((opts.attributes as string).split(',').map(a => toKebabCase(a.trim())))
 
     for (const scriptAST of scriptASTs) {
       traverseScriptAST(scriptAST, {
         visitJSXAttribute (path) {
           const attr = path.node
-          if (attr.name.name === 'class' || attr.name.name === 'className') {
+          if (attributes.has(attr.name.name as string)) {
             const valueNode = attr.value
             if (valueNode?.type === 'Literal' && typeof valueNode.value === 'string') {
               const newValue = replaceClassString(valueNode.value)
@@ -39,7 +48,7 @@ export const replaceClassNamesCodemod: CodemodPlugin = {
 
         enterNode (node) {
           if ('type' in node) {
-            if (node.type === 'VAttribute' && node.key.name === 'class' && node.value && node.value.type === 'VLiteral') {
+            if (node.type === 'VAttribute' && attributes.has(node.key.name as string) && node.value && node.value.type === 'VLiteral') {
               const original = node.value.value.replace(/^"|"$/g, '')
               const newValue = replaceClassString(original)
 
@@ -49,7 +58,13 @@ export const replaceClassNamesCodemod: CodemodPlugin = {
               }
             }
 
-            if (node.type === 'VExpressionContainer' && node.parent?.type === 'VAttribute' && node.parent.directive) {
+            if (node.type === 'VExpressionContainer'
+              && node.parent?.type === 'VAttribute'
+              && node.parent.directive
+              && node.parent.key.argument
+              && 'name' in node.parent.key.argument
+              && attributes.has(node.parent.key.argument.name)
+            ) {
               traverseTemplateAST(node, {
                 enterNode (expr) {
                   if (expr?.type === 'Literal' && typeof expr.value === 'string') {
