@@ -4,5 +4,6 @@ dist
 build
 
 uno.config.ts
+tailwind.config.ts
 
 src/mappings.json
