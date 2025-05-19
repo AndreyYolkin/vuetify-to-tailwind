@@ -18,6 +18,7 @@ import { positionMap } from './position'
 import { roundedMap } from './rounded'
 import { textDecorationMap } from './textDecoration'
 import { textTransformMap } from './textTransform'
+import { whiteSpaceMap } from './whiteSpace'
 
 export const classMap: Record<string, string> = {
   // overflow is the same
@@ -42,4 +43,5 @@ export const classMap: Record<string, string> = {
   ...fontWeightsMap,
   ...textTransformMap,
   ...textDecorationMap,
+  ...whiteSpaceMap,
 }
